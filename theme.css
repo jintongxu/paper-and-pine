@@ -1,0 +1,1274 @@
+/* Paper & Pine — 晴空蓝白 */
+
+body {
+  --font-interface-theme: "Inter", "Segoe UI", "Microsoft YaHei", sans-serif;
+  --font-text-theme: "Inter", "Segoe UI", "Microsoft YaHei", sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  --pp-heading-font: var(--font-text);
+  --file-line-width: 900px;
+  --line-height-normal: 1.85;
+  --line-height-tight: 1.5;
+  --heading-spacing: 1.8em;
+  --p-spacing: 1.15rem;
+  --h1-font: var(--pp-heading-font);
+  --h2-font: var(--pp-heading-font);
+  --h3-font: var(--pp-heading-font);
+  --h1-size: 2em;
+  --h2-size: 1.55em;
+  --h3-size: 1.25em;
+  --h4-size: 1.1em;
+  --h5-size: 1em;
+  --h6-size: 0.95em;
+  --h1-weight: 600;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --h1-line-height: 1.5;
+  --h2-line-height: 1.5;
+  --h3-line-height: 1.5;
+  --inline-title-font: var(--pp-heading-font);
+  --inline-title-size: 2.1em;
+  --inline-title-weight: 600;
+  --inline-title-line-height: 1.5;
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+  --input-radius: 5px;
+  --button-radius: 5px;
+  --tab-radius: 5px;
+  --callout-radius: 0 5px 5px 0;
+  --callout-border-width: 0 0 0 3px;
+  --callout-padding: 14px 18px;
+  --blockquote-border-thickness: 2px;
+  --blockquote-font-style: normal;
+  --tag-size: 0.85em;
+  --tag-radius: 3px;
+  --tag-padding-x: 0.35em;
+  --tag-padding-y: 0.12em;
+  --nav-item-size: 13px;
+  --nav-item-padding: 7px 10px;
+  --nav-item-radius: 4px;
+  --nav-item-weight-active: 600;
+  --table-header-weight: 600;
+  --table-border-width: 1px;
+  --table-cell-padding: 9px 13px;
+  --metadata-label-width: 9em;
+  --metadata-label-font-size: 0.85em;
+  --metadata-input-font-size: 0.9em;
+  --metadata-border-width: 0;
+  --metadata-divider-width: 0;
+  --checkbox-radius: 3px;
+  --slider-thumb-radius: 50%;
+}
+
+.theme-light {
+  color-scheme: light;
+  --color-base-00: #ffffff;
+  --color-base-05: #f6faff;
+  --color-base-10: #edf5ff;
+  --color-base-20: #e0edff;
+  --color-base-25: #d4e2f4;
+  --color-base-30: #c0d5ee;
+  --color-base-35: #a4bfdf;
+  --color-base-40: #87a5c8;
+  --color-base-50: #6a87aa;
+  --color-base-60: #556b87;
+  --color-base-70: #3d5574;
+  --color-base-100: #27364b;
+  --background-primary: #ffffff;
+  --background-primary-alt: #f6faff;
+  --background-secondary: #edf5ff;
+  --background-secondary-alt: #e0edff;
+  --background-modifier-border: #d4e2f4;
+  --background-modifier-border-hover: #a4bfdf;
+  --background-modifier-border-focus: #245fb0;
+  --background-modifier-hover: rgba(36, 95, 176, 0.07);
+  --background-modifier-active-hover: rgba(36, 95, 176, 0.12);
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-box-shadow: rgba(36, 59, 87, 0.08);
+  --background-modifier-cover: rgba(27, 47, 76, 0.28);
+  --text-normal: #27364b;
+  --text-muted: #556b87;
+  --text-faint: #667e9d;
+  --text-on-accent: #ffffff;
+  --text-accent: #245fb0;
+  --text-accent-hover: #194b8e;
+  --text-selection: rgba(36, 95, 176, 0.18);
+  --text-highlight-bg: #ffeba8;
+  --text-highlight-bg-active: #f5d675;
+  --color-accent-hsl: 215, 66%, 42%;
+  --color-accent: #245fb0;
+  --color-accent-1: #3778c4;
+  --color-accent-2: #194b8e;
+  --interactive-normal: #eaf3ff;
+  --interactive-hover: #daeaff;
+  --interactive-accent: #245fb0;
+  --interactive-accent-hover: #194b8e;
+  --interactive-accent-hsl: 215, 66%, 42%;
+  --color-red: #c95152;
+  --color-orange: #c66c32;
+  --color-yellow: #a27b16;
+  --color-green: #36835a;
+  --color-cyan: #25858b;
+  --color-blue: #3979b5;
+  --color-purple: #815da8;
+  --color-pink: #b65379;
+  --pp-wash: #cce1ff;
+  --pp-code-bg: #f0f6ff;
+  --pp-brass: #aa791d;
+  --pp-callout-rgb: 72, 126, 185;
+  --pp-code-comment: #6e7b68;
+  --pp-code-string: #27804e;
+  --pp-code-keyword: #a03b75;
+  --pp-code-number: #b36617;
+}
+
+/* The same materials in low light; never force a light canvas in dark mode. */
+.theme-dark {
+  color-scheme: dark;
+  --color-base-00: #232923;
+  --color-base-05: #202620;
+  --color-base-10: #1e241e;
+  --color-base-20: #303a2f;
+  --color-base-25: #394436;
+  --color-base-30: #475440;
+  --color-base-35: #5c6b53;
+  --color-base-40: #79856d;
+  --color-base-50: #9ba78e;
+  --color-base-60: #b2bba5;
+  --color-base-70: #c6cdbb;
+  --color-base-100: #e2e4d4;
+  --background-primary: #232923;
+  --background-primary-alt: #262e25;
+  --background-secondary: #1e241e;
+  --background-secondary-alt: #191f1a;
+  --background-modifier-border: #394436;
+  --background-modifier-border-hover: #53624a;
+  --background-modifier-border-focus: #91ad8a;
+  --background-modifier-hover: rgba(169, 195, 153, 0.07);
+  --background-modifier-active-hover: rgba(169, 195, 153, 0.12);
+  --background-modifier-form-field: #272f26;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.25);
+  --background-modifier-cover: rgba(0, 0, 0, 0.5);
+  --text-normal: #e2e4d4;
+  --text-muted: #b2bba5;
+  --text-faint: #96a48b;
+  --text-on-accent: #1b291f;
+  --text-accent: #a6c39e;
+  --text-accent-hover: #c2dab9;
+  --text-selection: rgba(166, 195, 158, 0.22);
+  --text-highlight-bg: #5c5030;
+  --text-highlight-bg-active: #74623a;
+  --color-accent-hsl: 107, 24%, 69%;
+  --color-accent: #a6c39e;
+  --color-accent-1: #b3cfa9;
+  --color-accent-2: #c2dab9;
+  --interactive-normal: #303a2f;
+  --interactive-hover: #394636;
+  --interactive-accent: #a6c39e;
+  --interactive-accent-hover: #c2dab9;
+  --interactive-accent-hsl: 107, 24%, 69%;
+  --color-red: #d99382;
+  --color-orange: #d4a06b;
+  --color-yellow: #cfb779;
+  --color-green: #a6c39e;
+  --color-cyan: #8cbdb1;
+  --color-blue: #9cb8cc;
+  --color-purple: #b4a1bd;
+  --color-pink: #cca0b0;
+  --pp-wash: #303d2e;
+  --pp-code-bg: #1e251e;
+  --pp-brass: #c9b37d;
+  --pp-callout-rgb: 166, 195, 158;
+  --pp-code-comment: #96a48b;
+  --pp-code-string: #a6c39e;
+  --pp-code-keyword: #cca0b0;
+  --pp-code-number: #cfb779;
+}
+
+body:is(.theme-light, .theme-dark) {
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-accent);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-muted);
+  --h6-color: var(--text-muted);
+  --inline-title-color: var(--text-normal);
+  --bold-color: var(--text-normal);
+  --italic-color: var(--text-muted);
+  --link-color: var(--text-accent);
+  --link-color-hover: var(--text-accent-hover);
+  --link-external-color: var(--text-accent);
+  --link-external-color-hover: var(--text-accent-hover);
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 0.75;
+  --link-unresolved-decoration-style: dashed;
+  --tag-color: var(--text-accent);
+  --tag-color-hover: var(--text-accent-hover);
+  --tag-background: var(--pp-wash);
+  --tag-background-hover: var(--background-modifier-hover);
+  --tag-border-width: 0;
+  --nav-item-color: var(--text-muted);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-background-active: var(--pp-wash);
+  --nav-item-background-hover: var(--background-modifier-hover);
+  --nav-collapse-icon-color: var(--text-faint);
+  --nav-collapse-icon-color-collapsed: var(--text-faint);
+  --indentation-guide-color: var(--background-modifier-border);
+  --indentation-guide-color-active: var(--text-accent);
+  --tab-background-active: var(--background-primary);
+  --tab-text-color: var(--text-muted);
+  --tab-text-color-active: var(--text-accent);
+  --tab-text-color-focused-active: var(--text-accent);
+  --tab-outline-color: var(--background-modifier-border);
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-secondary);
+  --titlebar-text-color: var(--text-muted);
+  --ribbon-background: var(--background-secondary-alt);
+  --ribbon-background-collapsed: var(--background-secondary-alt);
+  --status-bar-background: var(--background-secondary);
+  --status-bar-border-color: var(--background-modifier-border);
+  --status-bar-text-color: var(--text-muted);
+  --divider-color: var(--background-modifier-border);
+  --divider-color-hover: var(--text-accent);
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-accent);
+  --icon-color-active: var(--text-accent);
+  --icon-color-focused: var(--text-accent);
+  --checkbox-color: var(--interactive-accent);
+  --checkbox-color-hover: var(--interactive-accent-hover);
+  --checkbox-border-color: var(--text-faint);
+  --checklist-done-color: var(--text-muted);
+  --blockquote-border-color: var(--pp-brass);
+  --blockquote-color: var(--text-muted);
+  --blockquote-background-color: transparent;
+  --code-background: var(--pp-code-bg);
+  --code-normal: var(--text-normal);
+  --code-comment: var(--pp-code-comment);
+  --code-string: var(--pp-code-string);
+  --code-keyword: var(--pp-code-keyword);
+  --code-function: var(--text-accent);
+  --code-value: var(--pp-code-number);
+  --code-property: var(--text-accent);
+  --code-operator: var(--text-muted);
+  --table-border-color: var(--background-modifier-border);
+  --table-header-background: var(--pp-wash);
+  --table-header-background-hover: var(--pp-wash);
+  --table-row-background-hover: var(--background-modifier-hover);
+  --metadata-label-text-color: var(--text-muted);
+  --metadata-input-text-color: var(--text-normal);
+  --metadata-label-text-color-hover: var(--text-accent);
+  --graph-line: var(--background-modifier-border);
+  --graph-node: var(--text-muted);
+  --graph-node-focused: var(--text-accent);
+  --graph-node-tag: var(--pp-brass);
+  --graph-text: var(--text-muted);
+  --graph-node-attachment: var(--text-faint);
+  --graph-node-unresolved: var(--text-faint);
+}
+
+/* Native quote tokens also apply in Live Preview. */
+body.theme-light {
+  --blockquote-background-color: #f1f7ff;
+  --blockquote-border-color: #8eb6e5;
+  --blockquote-border-thickness: 2px;
+  --blockquote-color: #3d5574;
+  --blockquote-font-style: normal;
+}
+
+.theme-light .markdown-rendered blockquote:not(.callout) {
+  background: var(--blockquote-background-color);
+  color: var(--blockquote-color);
+  border-inline-start: 2px solid var(--blockquote-border-color);
+  border-radius: 0 6px 6px 0;
+  padding: 14px 18px;
+  margin-block: 1.2em;
+  font-style: normal;
+  box-shadow: none;
+}
+
+.theme-light .markdown-rendered blockquote:not(.callout) > :first-child {
+  margin-top: 0;
+}
+
+.theme-light .markdown-rendered blockquote:not(.callout) > :last-child {
+  margin-bottom: 0;
+}
+
+.theme-light .markdown-rendered blockquote:not(.callout) blockquote:not(.callout) {
+  background: transparent;
+  padding-block: 4px;
+  margin-block: 10px;
+}
+
+.theme-light .markdown-rendered blockquote:not(.callout) :not(pre) > code,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-quote .cm-inline-code {
+  background-color: #e3efff;
+  color: #245fb0;
+  border-radius: 3px;
+}
+
+/* Workspace: keep native layout, drag targets, and mobile navigation intact. */
+.nav-file-title.is-active {
+  box-shadow: inset 3px 0 var(--text-accent);
+  font-weight: 650;
+}
+
+.theme-light .nav-file-title.is-active {
+  background-color: #cce1ff;
+  color: #245fb0;
+  box-shadow: inset 3px 0 #245fb0;
+}
+
+.theme-light .markdown-rendered h1,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-1 {
+  color: #235daa;
+}
+
+.theme-light .markdown-rendered h2,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-2 {
+  color: #16776d;
+}
+
+.theme-light .markdown-rendered h3,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-3 {
+  color: #bd5148;
+}
+
+.theme-light .markdown-rendered h4,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-4 {
+  color: #7954a1;
+}
+
+.theme-light .markdown-rendered :is(h5, h6),
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-header-5, .cm-header-6) {
+  color: #9b711b;
+}
+
+.theme-light .markdown-rendered :is(a.internal-link, a.external-link),
+.theme-light .markdown-rendered :is(h1, h2, h3, h4) a,
+.theme-light .markdown-source-view.mod-cm6 .cm-link,
+.theme-light .markdown-source-view.mod-cm6 .cm-hmd-internal-link {
+  color: #245fb0;
+}
+
+.theme-light .markdown-rendered :is(a.internal-link, a.external-link):hover,
+.theme-light .markdown-rendered :is(h1, h2, h3, h4) a:hover {
+  color: #194b8e;
+}
+
+.theme-light .markdown-rendered strong,
+.theme-light .markdown-source-view.mod-cm6 .cm-strong {
+  color: #bd5148;
+}
+
+.theme-light .markdown-rendered pre {
+  background: var(--pp-code-bg);
+  border-color: #d5e5fb;
+}
+
+.theme-light .markdown-rendered pre code,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  color: #39363a;
+}
+
+.theme-light .markdown-rendered pre .token.comment,
+.theme-light .markdown-rendered pre .token.prolog,
+.theme-light .markdown-rendered pre .token.doctype,
+.theme-light .markdown-rendered pre .token.cdata,
+.theme-light .markdown-source-view.mod-cm6 .cm-comment {
+  color: #6e7b68;
+}
+
+.theme-light .markdown-rendered pre .token.keyword,
+.theme-light .markdown-rendered pre .token.selector,
+.theme-light .markdown-rendered pre .token.important,
+.theme-light .markdown-source-view.mod-cm6 .cm-keyword,
+.theme-light .markdown-source-view.mod-cm6 .cm-def {
+  color: #a03b75;
+}
+
+.theme-light .markdown-rendered pre .token.string,
+.theme-light .markdown-rendered pre .token.attr-value,
+.theme-light .markdown-source-view.mod-cm6 .cm-string {
+  color: #27804e;
+}
+
+.theme-light .markdown-rendered pre .token.function,
+.theme-light .markdown-rendered pre .token.class-name,
+.theme-light .markdown-source-view.mod-cm6 .cm-function,
+.theme-light .markdown-source-view.mod-cm6 .cm-type {
+  color: #315f9a;
+}
+
+.theme-light .markdown-rendered pre .token.number,
+.theme-light .markdown-rendered pre .token.boolean,
+.theme-light .markdown-rendered pre .token.constant,
+.theme-light .markdown-source-view.mod-cm6 .cm-number,
+.theme-light .markdown-source-view.mod-cm6 .cm-atom {
+  color: #b36617;
+}
+
+.theme-light .markdown-rendered pre .token.operator,
+.theme-light .markdown-rendered pre .token.punctuation,
+.theme-light .markdown-source-view.mod-cm6 .cm-operator,
+.theme-light .markdown-source-view.mod-cm6 .cm-punctuation {
+  color: #53656e;
+}
+
+.theme-light .markdown-rendered pre .token.property,
+.theme-light .markdown-rendered pre .token.attr-name,
+.theme-light .markdown-source-view.mod-cm6 .cm-property {
+  color: #25858b;
+}
+
+.theme-light .markdown-rendered mark,
+.theme-light .markdown-source-view.mod-cm6 .cm-highlight {
+  color: #44391f;
+}
+
+.theme-light .markdown-rendered th {
+  background-color: #e6f0ff;
+  color: #245fb0;
+}
+
+.theme-light .metadata-container {
+  background-color: #f6faff;
+  border-color: #d4e2f4;
+}
+
+.theme-light .callout {
+  background-color: #eef5ff;
+  border-color: #d6e3f5;
+  border-left-color: #4780bf;
+}
+
+.theme-light .callout[data-callout="warning"],
+.theme-light .callout[data-callout="caution"] {
+  background-color: #fff5dc;
+  border-left-color: #bd841f;
+}
+
+.theme-light .callout[data-callout="danger"],
+.theme-light .callout[data-callout="failure"] {
+  background-color: #fff0ed;
+  border-left-color: #c95152;
+}
+
+.theme-light .callout[data-callout="success"],
+.theme-light .callout[data-callout="check"] {
+  background-color: #ebf7ef;
+  border-left-color: #36835a;
+}
+
+.theme-light .workspace-tab-header-container,
+.theme-light .workspace-tab-header-container-inner {
+  background-color: #e6f0ff;
+}
+
+.theme-light .workspace-tab-header {
+  background-color: transparent;
+}
+
+.theme-light .workspace-tab-header.is-active {
+  background-color: #ffffff;
+  box-shadow: inset 0 -2px #245fb0;
+}
+
+.theme-light .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: #245fb0;
+}
+
+.theme-light .workspace-split.mod-right-split {
+  --background-primary: #edf5ff;
+  --background-primary-alt: #f6faff;
+  --background-secondary: #edf5ff;
+  --background-secondary-alt: #e0edff;
+  --nav-item-color-active: #245fb0;
+  --nav-item-background-active: #cce1ff;
+  --icon-color-active: #245fb0;
+}
+
+.theme-light .workspace-split.mod-right-split .workspace-leaf-content {
+  background-color: var(--background-secondary);
+}
+
+.theme-light .workspace-split.mod-right-split :is(.view-header, .workspace-leaf-header) {
+  background-color: #e6f0ff;
+}
+
+.theme-light .workspace-split.mod-right-split .workspace-leaf-header-title {
+  color: #3d5574;
+}
+
+.theme-light .view-header {
+  background-color: #ffffff;
+}
+
+.theme-light .workspace-tab-header-container,
+.theme-light .workspace-ribbon,
+.theme-light .workspace-sidedock-vault-profile {
+  --icon-color-active: #245fb0;
+  --icon-color-focused: #245fb0;
+}
+
+.theme-light .workspace-ribbon,
+.theme-light .workspace-ribbon.mod-left {
+  background-color: #e0edff;
+}
+
+.theme-light .status-bar {
+  background-color: #e6f0ff;
+  border-color: #d4e2f4;
+}
+
+.theme-light .workspace-sidedock-vault-profile {
+  background-color: #e0edff;
+}
+
+body.theme-light {
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(85, 119, 160, 0.18);
+  --scrollbar-active-thumb-bg: rgba(85, 119, 160, 0.38);
+  --divider-color: #d4e2f4;
+}
+
+.theme-light .workspace ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-light .workspace ::-webkit-scrollbar-track,
+.theme-light .workspace ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.theme-light .workspace ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 8px;
+}
+
+.theme-light .workspace ::-webkit-scrollbar-thumb:hover,
+.theme-light .workspace ::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg);
+}
+
+/* Folder headings and spacing group files without boxes or connector lines. */
+.theme-light .nav-files-container {
+  --nav-indentation-guide-width: 0px;
+  --nav-indentation-guide-color: transparent;
+}
+
+.theme-light .nav-files-container .nav-folder-children {
+  border-inline-start: 0;
+  border-left: 0;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) > .nav-folder-title {
+  color: #3d5574;
+  font-weight: 650;
+  border-radius: 4px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) {
+  margin-block: 6px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) > .nav-folder-children {
+  padding-block: 3px 6px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.is-collapsed):not(.mod-root) > .nav-folder-title .nav-folder-title-content::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  margin-top: 4px;
+  background-color: #a9c5e7;
+}
+
+.theme-light .nav-files-container .nav-folder-title-content::before {
+  content: none;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-title {
+  color: #345d91;
+  font-weight: 650;
+}
+
+/* The direct parent is emphasized without filling the whole branch. */
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-title {
+  color: #245fb0;
+  font-weight: 750;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-title .nav-folder-title-content::after {
+  background-color: #245fb0;
+  width: 40px;
+}
+
+.theme-light .nav-files-container .nav-folder-title:hover {
+  background-color: #daeaff;
+}
+
+/* Hide only the glyph; preserve the native collapse control and hit area. */
+.theme-light .nav-files-container .nav-folder-title .collapse-icon svg {
+  opacity: 0;
+}
+
+.nav-folder-title {
+  font-weight: 550;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--text-accent);
+}
+
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px var(--text-accent);
+}
+
+.view-header-title-container {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+/* Reading view and Live Preview share heading, text, and component tokens. */
+.inline-title {
+  margin-bottom: 0.75em;
+  letter-spacing: 0.025em;
+}
+
+.markdown-rendered :is(h1, h2, h3),
+.markdown-source-view .cm-header-1,
+.markdown-source-view .cm-header-2,
+.markdown-source-view .cm-header-3 {
+  letter-spacing: 0.025em;
+}
+
+.markdown-rendered :is(a.internal-link, a.external-link),
+.markdown-source-view.mod-cm6 .cm-link,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+.markdown-rendered hr,
+.markdown-source-view.mod-cm6 .cm-line hr {
+  border-color: var(--background-modifier-border);
+}
+
+.markdown-rendered mark,
+.markdown-source-view.mod-cm6 .cm-highlight {
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.metadata-container {
+  padding: 12px 0;
+  margin-bottom: 1.8em;
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-radius: 0;
+}
+
+.callout {
+  --callout-color: var(--pp-callout-rgb);
+  --callout-title-size: 0.95em;
+  --callout-title-weight: 600;
+  --callout-content-background: transparent;
+}
+
+/* Preserve semantic distinction instead of painting every callout green. */
+.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) {
+  --callout-color: 153, 119, 56;
+}
+
+.callout:is([data-callout="danger"], [data-callout="error"], [data-callout="failure"], [data-callout="fail"], [data-callout="missing"], [data-callout="bug"]) {
+  --callout-color: 170, 90, 73;
+}
+
+.callout:is([data-callout="quote"], [data-callout="cite"]) {
+  --callout-color: 128, 121, 101;
+}
+
+.callout-content > :first-child {
+  margin-top: 0.6em;
+}
+
+.callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-rendered pre,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  border-radius: var(--radius-s);
+}
+
+.markdown-rendered pre {
+  border: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered :not(pre) > code {
+  padding: 0.12em 0.3em;
+  border-radius: 3px;
+}
+
+.markdown-rendered table {
+  font-size: 0.93em;
+}
+
+.markdown-rendered th {
+  color: var(--text-accent);
+}
+
+.markdown-rendered img {
+  border-radius: var(--radius-s);
+}
+
+.markdown-rendered :is(.footnotes, .footnote-link) {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.search-result-file-title {
+  color: var(--text-accent);
+}
+
+.search-result-file-matched-text {
+  background: var(--text-highlight-bg);
+  color: var(--text-normal);
+}
+
+.suggestion-item.is-selected {
+  background: var(--pp-wash);
+  color: var(--text-accent);
+}
+
+body:not(.is-mobile) :is(button, input, textarea, select, .clickable-icon):focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+body.is-mobile {
+  --file-margins: 20px;
+  --h1-size: 1.8em;
+  --inline-title-size: 1.85em;
+  --metadata-label-width: 7em;
+}
+
+/* Technical note semantics: use native callout types explicitly in Markdown. */
+.theme-light .callout[data-callout="command"],
+.theme-light .callout[data-callout="shell"],
+.theme-light .callout[data-callout="terminal"] {
+  --callout-color: 36, 95, 176;
+  --callout-icon: lucide-terminal;
+  background: #f0f6ff;
+}
+
+.theme-light .callout[data-callout="output"],
+.theme-light .callout[data-callout="result"] {
+  --callout-color: 82, 112, 143;
+  --callout-icon: lucide-square-terminal;
+  background: #f5f8fb;
+}
+
+.theme-light .callout[data-callout="error"],
+.theme-light .callout[data-callout="bug"] {
+  --callout-color: 180, 76, 73;
+  --callout-icon: lucide-circle-x;
+  background: #fff1f0;
+}
+
+.theme-light .callout[data-callout="tip"],
+.theme-light .callout[data-callout="hint"] {
+  --callout-color: 32, 126, 117;
+  --callout-icon: lucide-lightbulb;
+  background: #eef9f7;
+}
+
+.theme-light .callout .callout-title {
+  font-weight: 650;
+}
+
+/* Optional language labels: only blocks with an explicit data-lang expose one. */
+.theme-light .markdown-rendered pre[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
+  margin: -0.25em 0 0.55em;
+  color: #6d83a0;
+  font: 0.72em var(--font-monospace-theme);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Optional focus mode: activate with body.pp-focus-mode via a snippet/plugin. */
+body.theme-light.pp-focus-mode .workspace-ribbon,
+body.theme-light.pp-focus-mode .workspace-split.mod-left-split,
+body.theme-light.pp-focus-mode .workspace-split.mod-right-split,
+body.theme-light.pp-focus-mode .workspace-tab-header-container,
+body.theme-light.pp-focus-mode .status-bar {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+body.theme-light.pp-focus-mode .workspace-split.mod-root {
+  --file-line-width: 1000px;
+}
+
+body.theme-light.pp-focus-mode .markdown-preview-view,
+body.theme-light.pp-focus-mode .markdown-source-view.mod-cm6 {
+  --file-line-width: 1000px;
+}
+
+body.theme-light.pp-focus-mode .view-header {
+  border-bottom-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-file-title,
+  .workspace-tab-header,
+  .clickable-icon {
+    transition: none;
+  }
+}
+
+/* File tree depth layer: explicit rhythm without arrows, boxes, or long guide lines. */
+.theme-light .nav-files-container .nav-folder:not(.mod-root) > .nav-folder-title {
+  padding-inline-start: 12px;
+  letter-spacing: 0.01em;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) > .nav-folder-children {
+  margin-inline-start: 12px;
+  padding-inline-start: 12px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder > .nav-folder-title {
+  padding-inline-start: 16px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder > .nav-folder-children {
+  margin-inline-start: 16px;
+  padding-inline-start: 16px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder .nav-folder > .nav-folder-title {
+  padding-inline-start: 20px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder .nav-folder > .nav-folder-children {
+  margin-inline-start: 20px;
+  padding-inline-start: 20px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder .nav-folder .nav-folder > .nav-folder-title {
+  padding-inline-start: 24px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root) .nav-folder .nav-folder .nav-folder > .nav-folder-children {
+  margin-inline-start: 24px;
+  padding-inline-start: 24px;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-title::before {
+  content: none;
+}
+
+/* Stable component layer: one source of truth for outline and code details. */
+.theme-light .workspace-leaf-content[data-type="outline"] {
+  --nav-item-background-active: transparent !important;
+  --nav-item-background-hover: #f0f6ff !important;
+  --outline-current-color: #245fb0;
+  background: #fff !important;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .view-content {
+  background: #fff !important;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-inner,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:hover,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-inner:hover,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected),
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected) > .tree-item-inner,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected):hover {
+  transition: none !important;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected),
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected) > .tree-item-inner,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected):hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--outline-current-color) !important;
+  box-shadow: inset 2px 0 var(--outline-current-color);
+}
+
+.theme-light .markdown-rendered pre {
+  background: #f4f8fe;
+  border: 0;
+  border-top: 1px solid #e5eef9;
+  border-bottom: 1px solid #e5eef9;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.theme-light .markdown-rendered pre code {
+  background: transparent;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  background: #f4f8fe;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
+  border-top: 1px solid #e5eef9;
+  border-radius: 6px 6px 0 0;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-end {
+  border-bottom: 1px solid #e5eef9;
+  border-radius: 0 0 6px 6px;
+}
+
+.theme-light .markdown-rendered pre button,
+.theme-light .markdown-rendered pre .copy-code-button,
+.theme-light .markdown-source-view.mod-cm6 .copy-code-button {
+  opacity: 0.35;
+  transition: none;
+}
+
+.theme-light .markdown-rendered pre:hover button,
+.theme-light .markdown-rendered pre:hover .copy-code-button,
+.theme-light .markdown-source-view.mod-cm6 .copy-code-button:hover {
+  opacity: 0.9;
+}
+
+.theme-light .markdown-rendered pre::-webkit-scrollbar,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock::-webkit-scrollbar {
+  height: 6px;
+}
+
+.theme-light .markdown-rendered pre::-webkit-scrollbar-thumb,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock::-webkit-scrollbar-thumb {
+  background: rgba(85, 119, 160, 0.22);
+  border-radius: 6px;
+}
+
+
+/*
+ * Final interaction layer — sky-white edition.
+ * Kept at the end so Obsidian and plugin selectors have one predictable override point.
+ */
+.theme-light {
+  --pp-chrome: #edf5ff;
+  --pp-chrome-alt: #e0edff;
+  --pp-chrome-active: #cce1ff;
+  --pp-divider: #d4e2f4;
+  --pp-path-ancestor: #e0edff;
+  --pp-path-parent: #cce1ff;
+  --pp-path-file-group: #f6faff;
+  --pp-editor-line: #f4f8ff;
+}
+
+/* 1. File tree: current path only; unrelated branches stay neutral. */
+.theme-light .nav-files-container .nav-folder:not(.mod-root) > .nav-folder-title {
+  background: transparent;
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-title {
+  background: transparent;
+  color: #345d91;
+  font-weight: 650;
+  opacity: 1;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-title {
+  background: transparent;
+  color: #245fb0;
+  box-shadow: inset 3px 0 #245fb0;
+  font-weight: 750;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-children {
+  background: transparent;
+  border-radius: 0;
+}
+
+.theme-light .nav-files-container .nav-file-title.is-active {
+  background: var(--pp-path-parent);
+  color: #245fb0;
+  box-shadow: inset 3px 0 #245fb0;
+  font-weight: 700;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-title .nav-folder-title-content::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin-top: 4px;
+  background: #9dbfe5;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-title .nav-folder-title-content::after {
+  width: 40px;
+  background: #245fb0;
+}
+
+.theme-light .nav-files-container .nav-folder-title:hover,
+.theme-light .nav-files-container .nav-file-title:hover {
+  background: #daeaff;
+}
+
+.theme-light .nav-files-container .nav-folder:not(.mod-root):not(:has(.nav-file-title.is-active)) > .nav-folder-title {
+  color: #6f8098;
+  font-weight: 550;
+}
+
+/* 2. Chrome: tabs, pane headers, ribbon and status use one surface family. */
+.theme-light .workspace-tab-header-container,
+.theme-light .workspace-tab-header-container-inner,
+.theme-light .workspace-ribbon,
+.theme-light .workspace-ribbon.mod-left,
+.theme-light .status-bar {
+  background: var(--pp-chrome);
+  border-color: var(--pp-divider);
+}
+
+.theme-light .workspace-tab-header {
+  background: transparent;
+}
+
+.theme-light .workspace-tab-header.is-active {
+  background: #fff;
+  box-shadow: inset 0 -2px #245fb0;
+}
+
+.theme-light .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: #245fb0;
+  font-weight: 650;
+}
+
+.theme-light .workspace-split.mod-right-split,
+.theme-light .workspace-split.mod-left-split {
+  --background-primary: var(--pp-chrome);
+  --background-primary-alt: #f6faff;
+  --background-secondary: var(--pp-chrome);
+  --background-secondary-alt: var(--pp-chrome-alt);
+}
+
+.theme-light .workspace-split.mod-right-split :is(.view-header, .workspace-leaf-header),
+.theme-light .workspace-split.mod-left-split :is(.view-header, .workspace-leaf-header) {
+  background: var(--pp-chrome-alt);
+  border-color: var(--pp-divider);
+}
+
+.theme-light .workspace-split.mod-right-split .workspace-leaf-content,
+.theme-light .workspace-split.mod-left-split .workspace-leaf-content {
+  background: var(--pp-chrome);
+}
+
+.theme-light .workspace-split.mod-right-split .workspace-leaf-header-title,
+.theme-light .workspace-split.mod-left-split .workspace-leaf-header-title {
+  color: #3d5574;
+}
+
+/* 3. Reading and Live Preview share the same title, quote, and code language. */
+.theme-light .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6) {
+  letter-spacing: 0.01em;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .cm-header-1 { color: #235daa; }
+.theme-light .markdown-source-view.mod-cm6 .cm-header-2 { color: #16776d; }
+.theme-light .markdown-source-view.mod-cm6 .cm-header-3 { color: #bd5148; }
+.theme-light .markdown-source-view.mod-cm6 .cm-header-4 { color: #7954a1; }
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-header-5, .cm-header-6) { color: #9b711b; }
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-quote {
+  background: #f1f7ff;
+  border-inline-start: 2px solid #8eb6e5;
+  color: #3d5574;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-quote .cm-inline-code {
+  background: #e3efff;
+  color: #245fb0;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  background: var(--pp-code-bg);
+  color: #39363a;
+  border-inline-start: 0;
+  box-shadow: inset 2px 0 #b9d2f0;
+}
+
+/* CodeMirror renders each line as its own block; keep the accent continuous. */
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-end,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock.cm-line {
+  border-inline-start: 0;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-end {
+  border-radius: 0 0 var(--radius-s) var(--radius-s);
+}
+
+.theme-light .markdown-source-view.mod-cm6 .cm-comment { color: #6e7b68; }
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-keyword, .cm-def) { color: #a03b75; }
+.theme-light .markdown-source-view.mod-cm6 .cm-string { color: #27804e; }
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-function, .cm-type) { color: #315f9a; }
+.theme-light .markdown-source-view.mod-cm6 :is(.cm-number, .cm-atom) { color: #b36617; }
+.theme-light .markdown-source-view.mod-cm6 .cm-property { color: #25858b; }
+
+/* Outline panel: a quiet index, not a large colored card. */
+.theme-light .workspace-leaf-content[data-type="outline"] {
+  --outline-heading-color: #345d91;
+  --outline-subheading-color: #62748d;
+  --outline-current-color: #245fb0;
+  --outline-hover: #f0f6ff;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"],
+.theme-light .workspace-leaf-content[data-type="outline"] .view-content {
+  background: #fff !important;
+  --nav-item-background-active: transparent;
+  --nav-item-background-hover: #f0f6ff;
+  padding: 10px 8px 16px;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self {
+  min-height: 30px;
+  padding: 5px 8px 5px 10px;
+  border-radius: 4px;
+  color: var(--outline-heading-color);
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:hover {
+  background: var(--outline-hover);
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-inner {
+  line-height: 1.45;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-children {
+  border-inline-start: 0;
+  margin-inline-start: 10px;
+  padding-inline-start: 10px;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-children .tree-item-self {
+  color: var(--outline-subheading-color);
+  font-size: 0.94em;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected),
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected):hover,
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected) > .tree-item-inner {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--outline-current-color);
+  box-shadow: inset 2px 0 var(--outline-current-color);
+  font-weight: 650;
+  transition: none !important;
+}
+
+/* Obsidian paints delayed outline focus on the inner label, not the row. */
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self > .tree-item-inner:hover {
+  background: var(--outline-hover);
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .tree-item-self:is(.is-active, .mod-active, .is-selected) > .tree-item-inner:hover {
+  background: transparent !important;
+}
+
+.theme-light .workspace-leaf-content[data-type="outline"] .collapse-icon {
+  color: #9cb4d3;
+}
+
+/* 4. Density: longer Chinese notes stay wide; code can use the reading width. */
+.theme-light .markdown-preview-view,
+.theme-light .markdown-source-view.mod-cm6 {
+  --file-line-width: 900px;
+}
+
+.theme-light .markdown-rendered pre {
+  max-width: 100%;
+  background: #f4f8fe;
+  border: 0;
+  border-top: 1px solid #e5eef9;
+  border-bottom: 1px solid #e5eef9;
+  border-radius: 6px;
+  box-shadow: none;
+  padding: 1em 1.25em;
+}
+
+.theme-light .markdown-rendered pre code {
+  background: transparent;
+}
+
+/* Live Preview: flat editor-like code area, without a repeated per-line frame. */
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  background: #f4f8fe;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding-inline: 1.25em;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
+  border-top: 1px solid #e5eef9;
+  border-radius: 6px 6px 0 0;
+  padding-top: 0.75em;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-end {
+  border-bottom: 1px solid #e5eef9;
+  border-radius: 0 0 6px 6px;
+  padding-bottom: 0.75em;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #c8dcf2;
+  margin-inline: -1.25em;
+}
+
+.theme-light .markdown-rendered pre:hover,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock:hover {
+  background: #f0f6ff;
+}
+
+.theme-light .markdown-rendered table thead th {
+  background: var(--pp-chrome-alt);
+  color: #245fb0;
+}
+
+.theme-light .markdown-rendered table tbody tr:hover {
+  background: #f4f8ff;
+}
